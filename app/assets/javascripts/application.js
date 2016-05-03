@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require velocity
 //= require turbolinks
+//= require bootstrap-sass-official
 //= require_tree .

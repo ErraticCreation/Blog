@@ -17,4 +17,4 @@
 /tmp
 
 # Ignore RubyMine Configuration Files
-/.idea
+.idea/*

@@ -1,0 +1,13 @@
+<% @posts.each do |post| %>
+  <section class="panel panel-default">
+    <header class="panel-heading">
+      <h3 id="post<%= post.id %>"><%= post.title %></h3>
+    </header>
+    <article class="panel-body">
+      <p><%= post.body %></p>
+    </article>
+    <footer>
+      <!-- Future Comments Preview -->
+    </footer>
+  </section>
+<% end %>

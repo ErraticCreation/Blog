@@ -1,7 +1,8 @@
 <% @posts.each do |post| %>
+  <div class="anchor" id="post<%= post.id %>"></div>
   <section class="panel panel-default">
     <header class="panel-heading">
-      <h3 id="post<%= post.id %>"><%= post.title %></h3>
+      <h3><%= post.title %></h3>
     </header>
     <article class="panel-body">
       <p><%= post.body %></p>

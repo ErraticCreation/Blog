@@ -14,4 +14,8 @@ $(document).ready(function(){
 
   $('body').scrollspy({ target: '#navbar' });
 
+  $('#toggle-menu').click(function (e) {
+    e.preventDefault();
+    $('#page-wrapper').toggleClass('menu-displayed');
+  });
 });

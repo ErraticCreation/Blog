@@ -1,0 +1,9 @@
+<ul>
+  <% @posts.each do |post| %>
+      <li class="same-page">
+        <a href="#post<%= post.id %>">
+          <span>#<%= post.id %>: </span><%= post.title %>
+        </a>
+      </li>
+  <% end %>
+</ul>

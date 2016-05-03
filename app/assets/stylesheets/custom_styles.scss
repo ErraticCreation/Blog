@@ -1,3 +1,7 @@
-body {
-  position: relative;
+#main-content-wrapper {
+  .container-fluid {
+    position: relative;
+  }
 }
+
+.anchor {padding-top: 50px;}

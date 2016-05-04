@@ -1,9 +1,15 @@
-<ul>
-  <% @posts.each do |post| %>
-      <li>
-        <a href="#post<%= post.id %>">
-          <span>#<%= post.id %>: </span><%= post.title %>
-        </a>
-      </li>
-  <% end %>
-</ul>
+<div class="sidebar">
+  <ul class="category text-center">
+    <li><h4>Website</h4></li>
+    <li><%= link_to "Blog", root_path %></li>
+    <li><a href="">About</a></li>
+  </ul>
+  <ul class="category text-center">
+    <li><h4>Social</h4></li>
+    <li><a href="https://github.com/ErraticCreation" target="_blank">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/tyler-nixon-8187a4ab
+" target="_blank">LinkedIn</a></li>
+    <li><a href="https://twitter.com/erraticcreation" target="_blank">Twitter</a></li>
+    <li><a href="http://tyler-nixon.com" target="_blank">Personal Website</a></li>
+  </ul>
+</div>

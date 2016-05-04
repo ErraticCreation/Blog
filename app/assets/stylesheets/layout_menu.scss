@@ -4,6 +4,18 @@ $padding-transition: padding 0.60s ease-in-out .025s;
 /* Sidebar Menu */
 
 #sidebar-wrapper {
+  .sidebar {
+    h4 {
+      color: #EEE;
+    }
+    ul {
+      padding: 20px;
+      li {
+        font-size: 1.2em;
+      }
+    }
+    align-content: center;
+  }
   top: 50px;
   z-index: 1;
   position: fixed;

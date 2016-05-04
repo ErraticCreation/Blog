@@ -1,11 +1,27 @@
 <div class="sidebar">
-  <ul class="category text-center">
-    <li><h4>Website</h4></li>
-    <li><%= link_to "Blog", root_path %></li>
-    <li><a href="">About</a></li>
+  <ul class="category">
+    <li class="text-center"><h4>Website</h4></li>
+    <li><%= link_to '<i class="fa fa-book" aria-hidden="true"></i> Blog'.html_safe, root_path %></li>
+    <li><a href="#about_me" role="button" data-toggle="collapse" aria-expanded="false"
+           aria-controls="about_me"><i class="fa fa-user" aria-hidden="true"></i>About Me</a></li>
+    <li class="collapse" id="about_me">
+      <div class="text-center">
+        <header>
+          <h3>Tyler Nixon</h3>
+          <%= image_tag("me.jpg") %>
+        </header>
+        <section>
+          <br><p>I am a relatively new web developer, I have been hard at work honing my HTML/CSS, and Javascript
+          skills as well as learning the Rails Web development framework since November 2015. This blog is the first
+          full-fledged Rails application I have created entirely on my own without following any tutorials or guides.
+          My hope is that you enjoy this site as much as I've enjoyed creating it!
+        </p>
+        </section>
+      </div>
+    </li>
   </ul>
-  <ul class="category text-center">
-    <li><h4>Social</h4></li>
+  <ul class="category">
+    <li class="text-center"><h4>Social</h4></li>
     <li><a href="https://github.com/ErraticCreation" target="_blank"><i class="fa fa-github" aria-hidden="true"></i>GitHub</a></li>
     <li><a href="https://www.linkedin.com/in/tyler-nixon-8187a4ab
 " target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i>LinkedIn</a></li>

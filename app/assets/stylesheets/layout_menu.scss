@@ -20,26 +20,54 @@ $padding-transition: padding 0.60s ease-in-out .025s;
   .sidebar {
     h4 {
       color: #EEE;
+      font-size: 1.45em;
     }
     ul {
       padding: 20px;
       li {
-        font-size: 1.2em;
+        margin: 10px 0px 5px;
+        a {
+          font-size: 1.4em;
+          color: #BBB;
+          &:hover {
+            color: #121212;
+          }
+        }
       }
     }
-    align-content: center;
   }
-  top: 50px;
+  top: 48px;
   z-index: 1;
   position: fixed;
   width: 0;
   height: 100%;
-  overflow-y: hidden;
+  overflow: auto;
   background-color: #2E2F30;
   border: 2px solid lightgray;
   opacity: 0.8;
           transition: $width-transition;
   -webkit-transition: $width-transition;
+}
+
+#about_me {
+  margin-top: 30px;
+  color: #DDD;
+  div {
+    border-radius: 3px;
+    border: 2px solid gainsboro;
+    header {
+      img {
+        max-width: 160px;
+        border-radius: 2px;
+        border: 1px solid gainsboro;
+      }
+    }
+    section {
+      p {
+        font-size: 1.05em;
+      }
+    }
+  }
 }
 
 /* Main Content */

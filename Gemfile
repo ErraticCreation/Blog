@@ -13,6 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'devise'
 gem 'bower-rails'
+gem 'carrierwave', '~> 0.11.0'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'fog', '~> 1.38'
 
 group :development, :test do
   gem 'byebug'
@@ -24,3 +27,7 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'pg', '~> 0.18.4'
+  gem 'rails_12factor', '~> 0.0.3'
+end

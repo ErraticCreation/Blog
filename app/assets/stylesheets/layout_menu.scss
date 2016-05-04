@@ -1,4 +1,7 @@
-/* Sidebar Styles */
+$width-transition: width 0.60s ease-in-out .025s;
+$padding-transition: padding 0.60s ease-in-out .025s;
+
+/* Sidebar Menu */
 
 #sidebar-wrapper {
   top: 50px;
@@ -10,6 +13,8 @@
   background-color: #2E2F30;
   border: 2px solid lightgray;
   opacity: 0.8;
+          transition: $width-transition;
+  -webkit-transition: $width-transition;
 }
 
 /* Main Content */
@@ -17,13 +22,19 @@
 #main-content-wrapper {
   width: 100%;
   position: absolute;
+          transition: $padding-transition;
+  -webkit-transition: $padding-transition;
 }
 
 #page-wrapper.menu-displayed {
   #sidebar-wrapper{
     width: 250px;
+            transition: $width-transition;
+    -webkit-transition: $width-transition;
   }
   #main-content-wrapper {
     padding-left: 250px;
+            transition: $padding-transition;
+    -webkit-transition: $padding-transition;
   }
 }

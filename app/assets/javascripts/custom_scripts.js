@@ -12,8 +12,7 @@ $(document).ready(function(){
         return false;
     });
 
-  $('body').scrollspy({ target: '#navbar' });
-
+    // Toggle Sidebar menu script
   $('#toggle-menu').click(function (e) {
     e.preventDefault();
     $('#page-wrapper').toggleClass('menu-displayed');

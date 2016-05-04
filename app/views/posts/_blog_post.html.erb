@@ -3,7 +3,7 @@
   <section class="panel panel-default">
     <header class="panel-heading">
       <h3>
-        <%= post.title %><br>
+        <%= link_to post.title, post_path(post) %><br>
         <small>
         Posted: <%= time_ago_in_words(post.created_at) %> ago.
         </small>

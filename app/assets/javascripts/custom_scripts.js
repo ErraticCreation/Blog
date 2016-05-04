@@ -1,5 +1,5 @@
-$(document).ready(function(){
-
+var ready;
+ready = function() {
     // Smooth Scrolling
     var $root = $('html, body');
     $('.same-page a').click(function() {
@@ -13,8 +13,11 @@ $(document).ready(function(){
     });
 
     // Toggle Sidebar menu script
-  $('#toggle-menu').click(function (e) {
-    e.preventDefault();
-    $('#page-wrapper').toggleClass('menu-displayed');
-  });
-});
+    $('#toggle-menu').click(function (e) {
+        e.preventDefault();
+        $('#page-wrapper').toggleClass('menu-displayed');
+    });
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

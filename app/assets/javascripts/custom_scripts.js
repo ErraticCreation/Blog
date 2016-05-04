@@ -16,6 +16,8 @@ ready = function() {
     $('#toggle-menu').click(function (e) {
         e.preventDefault();
         $('#page-wrapper').toggleClass('menu-displayed');
+        $('#glyphicon').toggleClass('glyphicon-menu-right');
+        $('#glyphicon').toggleClass('glyphicon-menu-left');
     });
 };
 

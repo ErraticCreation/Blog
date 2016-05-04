@@ -1,6 +1,19 @@
 $width-transition: width 0.60s ease-in-out .025s;
 $padding-transition: padding 0.60s ease-in-out .025s;
 
+/* Navbar Styles */
+
+#toggle-menu {
+  text-decoration: none;
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #333;
+  &:hover {
+    color: darkgray;
+  }
+}
+
 /* Sidebar Menu */
 
 #sidebar-wrapper {

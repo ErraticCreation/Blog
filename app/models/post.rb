@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
   has_many :comments
-  validates_presence_of :title
-  validates_presence_of :body
+  validates :title, presence: true, length: { minimum: 5, maximum: 50 }
+  validates :body, presence: true
 end

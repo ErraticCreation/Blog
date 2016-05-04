@@ -1,19 +1,31 @@
 <% @posts.each do |post| %>
   <div class="anchor" id="post<%= post.id %>"></div>
-  <section class="panel panel-default">
-    <header class="panel-heading">
-      <h3>
-        <%= link_to post.title, post_path(post) %><br>
-        <small>
-        Posted: <%= time_ago_in_words(post.created_at) %> ago.
-        </small>
-      </h3>
-    </header>
-    <article class="panel-body">
-      <p><%= post.body %></p>
-    </article>
-    <footer>
-      <!-- Future Comments Preview -->
-    </footer>
+  <section>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <%= image_tag post.picture.url, class: "img-responsive" if post.picture? %>
+        <header>
+          <h3>
+            <%= post.title %><br>
+            <small>
+              Posted: <%= time_ago_in_words(post.created_at) %> ago.
+            </small>
+          </h3>
+        </header>
+        <article>
+          <p>
+            <%= post.body %>
+          </p>
+          <div class="padding"></div>
+          <button class="btn btn-default btn-lg">
+            <%= link_to "Read More", post_path(post) %>
+          </button>
+        </article>
+        <footer>
+          <!-- Future Comments Preview -->
+          <hr class="padding">
+        </footer>
+      </div>
+    </div>
   </section>
 <% end %>

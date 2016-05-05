@@ -6,7 +6,7 @@
   <body data-spy="scroll" data-target="#navbar">
 
     <%= render '/layouts/navbar.html.erb' %>
-    <%= render '/layouts/messages' %>
+    <div class="padding"></div>
 
     <div id="page-wrapper">
       <div id="sidebar-wrapper">
@@ -15,7 +15,7 @@
 
       <div id="main-content-wrapper">
         <div class="container-fluid">
-          <div class="padding"></div>
+          <%= render '/layouts/messages' %>
           <%= yield %>
         </div>
       </div>

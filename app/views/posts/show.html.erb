@@ -1,26 +1,45 @@
 <% provide(:title, @post.title) %>
 
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-  <section class="panel panel-default">
-    <header class="panel-heading">
-      <h3>
-        <%= @post.title %><br>
-        <small>
-          Posted: <%= time_ago_in_words(@post.created_at) %> ago.
-        </small>
-      </h3>
-    </header>
-    <article class="panel-body">
-      <p><%= @post.body %></p>
-    </article>
-    <footer>
-      <!-- Future Full Comments Section -->
-    </footer>
-  </section>
-</div>
-
-<div>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', posts_path %>
-</div>
-
+<section>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
+      <%= image_tag @post.picture.url, class: "img-responsive" if @post.picture? %>
+      <header class="post-header">
+        <h3>
+          <%= @post.title %><br>
+          <small>
+            Posted: <%= time_ago_in_words(@post.created_at) %> ago.
+          </small>
+        </h3>
+      </header>
+      <article class="post-body">
+        <p>
+          <%= @post.body %>
+        </p>
+        <div class="padding"></div>
+        <span>
+          <button class="btn btn-default btn-lg">
+            <%= link_to "Back", posts_path %>
+          </button>
+          <% if user_signed_in? %>
+            <button class="btn btn-warning btn-lg">
+              <%= link_to 'Edit', edit_post_path(@post) %>
+            </button>
+          <% end %>
+        </span>
+      </article>
+      <hr class="padding">
+      <footer>
+        <h3 class="text-center h2">Comments</h3>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding text-center">
+            <%= render 'comments/form' %>
+          </div>
+          <% if @post.comments.any? %>
+              <%= render partial: '/posts/comment', collection: @post.comments %>
+          <% end %>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>

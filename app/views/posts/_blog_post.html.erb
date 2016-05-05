@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
         <%= image_tag post.picture.url, class: "img-responsive" if post.picture? %>
-        <header>
+        <header class="post-header">
           <h3>
             <%= post.title %><br>
             <small>
@@ -12,7 +12,7 @@
             </small>
           </h3>
         </header>
-        <article>
+        <article class="post-body">
           <p>
             <%= post.body %>
           </p>

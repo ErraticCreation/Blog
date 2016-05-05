@@ -35,6 +35,14 @@ $padding-transition: padding 0.60s ease-in-out .025s;
         }
       }
     }
+    .footer {
+      .copyright {
+        color: #CCC;
+      }
+      position: relative;
+      bottom: 0px;
+      left: 20px;
+    }
   }
   top: 48px;
   z-index: 1;

@@ -6,4 +6,11 @@
     <p class="text-center comment-body"><span class="glyphicon glyphicon-comment strong">:&nbsp;</span><%= comment.body
     %></p>
   </section>
+  <% if user_signed_in? %>
+      <button class="btn btn-danger btn-sm">
+        <%= link_to 'Delete', [comment.post, comment], method: :delete, data: {confirm: 'Really delete the
+        comment?'} %>
+      </button>
+  <% end %>
+
 </div>

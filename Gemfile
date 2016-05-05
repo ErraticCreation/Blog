@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'devise'
 gem 'bower-rails'
+gem 'font-awesome-sass', '~> 4.6.2'
 gem 'carrierwave', '~> 0.11.0'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'fog', '~> 1.38'

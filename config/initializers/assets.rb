@@ -11,6 +11,12 @@ Rails.application.config.assets.paths << Rails.root.join("vendor",
                                                          "bootstrap-sass-official",
                                                          "assets",
                                                          "fonts")
+Rails.application.config.assets.paths << Rails.root.join("vendor",
+                                                         "assets",
+                                                         "bower_components",
+                                                         "fontawesome",
+                                                         "fonts")
+
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf|woff2)\z/
 
 # Precompile additional assets.

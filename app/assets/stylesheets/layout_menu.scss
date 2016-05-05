@@ -5,7 +5,8 @@ $padding-transition: padding 0.60s ease-in-out .025s;
 
 #toggle-menu {
   text-decoration: none;
-  font-size: 1.2em;
+  font-family: 'Cuprum', sans-serif;
+  font-size: 1.4em;
   letter-spacing: -1px;
   text-transform: uppercase;
   color: #333;
@@ -20,7 +21,8 @@ $padding-transition: padding 0.60s ease-in-out .025s;
   .sidebar {
     h4 {
       color: #EEE;
-      font-size: 1.45em;
+      font-size: 1.75em;
+      font-family: 'Niconne', cursive;
     }
     ul {
       padding: 20px;
@@ -29,6 +31,7 @@ $padding-transition: padding 0.60s ease-in-out .025s;
         a {
           font-size: 1.4em;
           color: #BBB;
+          font-family: 'Cinzel', serif;
           &:hover {
             color: #121212;
           }
@@ -69,10 +72,15 @@ $padding-transition: padding 0.60s ease-in-out .025s;
         border-radius: 2px;
         border: 1px solid gainsboro;
       }
+      h3 {
+        font-family: 'Cinzel', serif;
+        font-size: 1.5em;
+      }
     }
     section {
       p {
-        font-size: 1.05em;
+        font-family: 'Cuprum', sans-serif;
+        font-size: 1.2em;
       }
     }
   }

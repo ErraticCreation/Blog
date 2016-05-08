@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   has_many :comments
   mount_uploader :picture, PictureUploader
-  validates :title, presence: true, length: { minimum: 5, maximum: 50 }
+  validates :title, presence: true, length: { minimum: 3, maximum: 50 }
   validates :body, presence: true
   validate :picture_size
 

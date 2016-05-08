@@ -3,12 +3,15 @@
 <section>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
-      <%= image_tag @post.picture.url, class: "img-responsive" if @post.picture? %>
+      <%= image_tag @post.picture.url, class: "img-responsive" if @post.picture %>
       <header class="post-header">
         <h3>
           <%= @post.title %><br>
           <small>
             Posted: <%= time_ago_in_words(@post.created_at) %> ago.
+            <% if @post.created_at %>
+              <br>Last Updated: <%= time_ago_in_words(@post.updated_at) %> ago.
+            <% end %>
           </small>
         </h3>
       </header>

@@ -1,14 +1,12 @@
 <div class="container-fluid">
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
     <div class="navbar-header">
-      <% if user_signed_in? %>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle Navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      <% end %>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <div class="navbar-brand">
         <a href="" id="toggle-menu"><div class="glyphicon glyphicon-menu-right" id="glyphicon"></div>Menu</a>
       </div>
@@ -18,6 +16,8 @@
         <% if user_signed_in? %>
           <li><%= link_to 'New Post', new_post_path, class: 'btn btn-default' %></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-default' %></li>
+        <% else %>
+          <li><%= link_to 'Sign In', new_user_session_path,class: 'btn btn-default' %></li>
         <% end %>
       </ul>
     </div>

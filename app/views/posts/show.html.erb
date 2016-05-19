@@ -24,15 +24,14 @@
           <button class="btn btn-default btn-lg">
             <%= link_to "Back", posts_path %>
           </button>
-          <% if user_signed_in? && current_user? %>
+          <% if user_signed_in? && current_user.id == @post.user_id %>
             <button class="btn btn-warning btn-lg">
               <%= link_to 'Edit', edit_post_path(@post) %>
             </button>
           <% end %>
           <% if user_signed_in? && current_user.admin? %>
             <button class="btn btn-danger btn-lg">
-              <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: 'Really delete the
-              post?'} %>
+              <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: 'Really delete the post?'} %>
             </button>
           <% end %>
         </span>
@@ -41,11 +40,15 @@
       <footer>
         <h3 class="text-center h2">Comments</h3>
         <div class="row">
+          <% if signed_in? %>
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding text-center">
             <%= render 'comments/form' %>
           </div>
+          <% end %>
           <% if @post.comments.any? %>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding media comment">
               <%= render partial: '/posts/comment', collection: @post.comments %>
+              </div>
           <% end %>
         </div>
       </footer>

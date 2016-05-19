@@ -7,7 +7,7 @@
     </div>
 
     <%= render 'posts/blog_post' %>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.admin? %>
       <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
         <%= link_to 'New Post', new_post_path %>
       </footer>

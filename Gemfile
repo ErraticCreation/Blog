@@ -17,6 +17,8 @@ gem 'carrierwave', '~> 0.11.0'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'fog', '~> 1.38'
 gem 'honeypot-captcha'
+gem 'cancancan'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'

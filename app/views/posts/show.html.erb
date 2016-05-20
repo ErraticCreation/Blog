@@ -47,8 +47,9 @@
           <% end %>
           <% if @post.comments.any? %>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding media comment">
-              <%= render partial: '/posts/comment', collection: @post.comments %>
+              <%= render '/posts/comments' %>
               </div>
+              <%= will_paginate @comments, class: "pagination-style" %>
           <% end %>
         </div>
       </footer>

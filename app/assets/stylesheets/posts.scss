@@ -22,3 +22,33 @@
     font-family: 'Cuprum', sans-serif;
   }
 }
+
+/* Pagination Styles */
+.pagination-style {
+  a, span, em {
+    padding: 0.2em 0.5em;
+    margin-right: 1px;
+  }
+  .disabled {
+    color: #999999;
+    border: 1px solid #dddddd;
+  }
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2E2F30;
+    color: white;
+    border: 1px solid #252627;
+  }
+  a {
+    text-decoration: none;
+    color: #666;
+    border: 1px solid #777;
+    &:hover,
+    &:focus {
+      color: #444;
+      border-color: #333;
+    }
+  }
+  margin: 15px 0px;
+}

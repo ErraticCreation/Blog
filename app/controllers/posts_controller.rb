@@ -1,16 +1,19 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.order('created_at DESC').paginate(:page => params[:page], :per_page => 5)
     @comment = Comment.new
     @comment.post_id = @post.id
     @comment.user = current_user

@@ -7,11 +7,14 @@
     </div>
 
     <%= render 'posts/blog_post' %>
-    <% if user_signed_in? %>
-      <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+
+    <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+      <% if user_signed_in? %>
         <%= link_to 'New Post', new_post_path %>
-      </footer>
-    <% end %>
+      <% end %>
+      <%= will_paginate @posts, class: "pagination-style" %>
+    </footer>
+
   </article>
 
 </div>

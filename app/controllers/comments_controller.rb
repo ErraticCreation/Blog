@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.post_id = params[:post_id]
-    @comment.author_name = current_user.first_name
+    @comment.author_name = "#{current_user.first_name} #{current_user.last_name}"
 
     @comment.save
 

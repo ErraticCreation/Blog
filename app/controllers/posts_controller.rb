@@ -33,6 +33,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    @post.author = "#{current_user.first_name} #{current_user.last_name}"
 
     respond_to do |format|
       if @post.save
@@ -48,6 +49,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post.author = "#{current_user.first_name} #{current_user.last_name}"
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -77,6 +80,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :picture)
+      params.require(:post).permit(:user_id, :title, :body, :picture)
     end
 end

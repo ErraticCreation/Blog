@@ -8,7 +8,13 @@
         <h3>
           <%= @post.title %><br>
           <small>
-            Posted: <%= time_ago_in_words(@post.created_at) %> ago.
+            Posted
+            <% if @post.author %>
+                by <em class="h6"><%= @post.author %>:</em> <%= time_ago_in_words(@post.created_at) %> ago.
+            <% else%>
+                : <%= time_ago_in_words(@post.created_at) %> ago.
+            <% end %>
+            
             <% if @post.created_at %>
               <br>Last Updated: <%= time_ago_in_words(@post.updated_at) %> ago.
             <% end %>

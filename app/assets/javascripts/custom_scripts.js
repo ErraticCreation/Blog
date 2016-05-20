@@ -19,6 +19,9 @@ ready = function() {
         $('#glyphicon').toggleClass('glyphicon-menu-right');
         $('#glyphicon').toggleClass('glyphicon-menu-left');
     });
+
+    // Fade Out Alerts Automatically
+    $('.alert').delay(5000).fadeOut(800);
 };
 
 $(document).ready(ready);

@@ -10,7 +10,7 @@
 
     <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
       <% if user_signed_in? %>
-        <%= link_to 'New Post', new_post_path %>
+        <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
       <% end %>
       <%= will_paginate @posts, class: "pagination-style" %>
     </footer>

@@ -17,9 +17,7 @@
             <%= post.body %>
           </p>
           <div class="padding"></div>
-          <button class="btn btn-default btn-lg">
-            <%= link_to "Read More", post_path(post) %>
-          </button>
+          <%= link_to "Read More", post_path(post),class: "btn btn-default btn-lg" %>
         </article>
         <footer>
           <!-- Future Comments Preview -->

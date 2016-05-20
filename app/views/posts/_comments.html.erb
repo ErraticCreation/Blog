@@ -4,8 +4,8 @@
     <h4><span class="glyphicon glyphicon-user"><%= comment.author_name %>:</span></h4>
   </header>
   <section class="media-body">
-    <p class="text-center comment-body"><span class="glyphicon glyphicon-comment strong">:&nbsp;</span><%= comment.body
-    %></p>
+    <small class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-right text-right"><em><%= time_ago_in_words(comment.created_at) %> ago. </em></small>
+    <p class="text-center comment-body"><span class="glyphicon glyphicon-comment strong">:&nbsp;</span><%= comment.body %></p>
     <% if user_signed_in? && current_user.admin? %>
       <%= link_to 'Delete', [comment.post, comment], method: :delete, data: {confirm: 'Really delete the comment?'}, class: "btn btn-danger btn-sm" %>
     <% end %>

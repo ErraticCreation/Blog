@@ -6,11 +6,14 @@ class CommentsController < ApplicationController
     @comment.post_id = params[:post_id]
     @comment.author_name = "#{current_user.first_name} #{current_user.last_name}"
 
-    @comment.save
-
     respond_to do |format|
-      format.html { redirect_to post_path(@comment.post), notice: 'Comment was successfully created.' }
-      format.json { head :no_content }
+      if @comment.save
+        format.html { redirect_to post_path(@comment.post), notice: 'Comment was successfully created.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to post_path(@comment.post), alert: "Comment wasn't created successfully."  }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
     end
 
   end

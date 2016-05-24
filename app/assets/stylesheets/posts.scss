@@ -23,6 +23,16 @@
   }
 }
 
+.archives {
+  a {
+    &:hover {
+      color: #777;
+    }
+    font-size: 1.1em;
+    color: #2E2F30;
+  }
+}
+
 /* Pagination Styles */
 .pagination-style {
   a, span, em {

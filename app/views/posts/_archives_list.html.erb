@@ -1,0 +1,13 @@
+<% @archive_post_months.sort.reverse.each do |month, posts| %>
+    <section class="col-xs-12 col-sm 10 col-md-8 col-lg-6 col-md-2 col-sm-offset-1 archives">
+      <header>
+        <h2><%=h month.strftime(" %B %Y") %></h2>
+      </header>
+      <article>
+        <% for post in posts %>
+            <p class="h5"><%=h link_to "<i class='fa fa-history' aria-hidden='true'></i>#{post.title}<br><small>By<em> #{post.author}<em></small>".html_safe, post_path(post) %></p>
+        <% end %>
+      </article>
+    </section>
+
+<% end %>

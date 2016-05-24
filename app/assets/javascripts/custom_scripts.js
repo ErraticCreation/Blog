@@ -18,6 +18,13 @@ ready = function() {
         $('#page-wrapper').toggleClass('menu-displayed');
         $('#glyphicon').toggleClass('glyphicon-menu-right');
         $('#glyphicon').toggleClass('glyphicon-menu-left');
+        $('#blog-nav').find('.collapse.in').collapse('hide');
+    });
+
+    // Toggle collapse
+    var $blogNav = $('#blog-nav');
+    $blogNav.on('show.bs.collapse', function() {
+      $blogNav.find('.collapse.in').collapse('hide');
     });
 
     // Fade Out Alerts Automatically

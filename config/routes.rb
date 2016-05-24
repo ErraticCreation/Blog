@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   end
 
   root 'posts#index'
+  get  'archives' => 'posts'
 
 end

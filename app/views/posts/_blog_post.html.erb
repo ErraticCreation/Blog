@@ -19,7 +19,7 @@
         </header>
         <article class="post-body">
           <p>
-            <%= post.body %>
+            <%= h truncate(post.body, :length => 190, separator: /\s/) %>
           </p>
           <div class="padding"></div>
           <%= link_to "Read More", post_path(post),class: "btn btn-default btn-lg" %>

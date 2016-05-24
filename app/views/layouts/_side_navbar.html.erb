@@ -1,8 +1,21 @@
 <div class="sidebar">
-  <ul class="category">
+  <ul class="category" id="blog-nav">
     <li class="text-center"><h4>Website</h4></li>
-    <li><%= link_to '<i class="fa fa-book" aria-hidden="true"></i> Blog'.html_safe, root_path %></li>
-    <li><a href="#about_me" role="button" data-toggle="collapse" aria-expanded="false"
+    <li><a href="#blog" role="button" data-toggle="collapse" data-parent="#blog-nav" aria-expanded="false"
+           aria-controls="blog"><i class="fa fa-book" aria-hidden="true"></i>Blog Posts</a></li>
+    <li class="collapse" id="blog">
+      <ul>
+        <% @post_months.sort.reverse.each do |month, posts| %>
+            <li><h4><i class="fa fa-calendar-o" aria-hidden="true"></i><%=h month.strftime(" %B %Y") %></h4></li>
+            <ul>
+              <% for post in posts %>
+                  <li><%=h link_to "<i class='fa fa-history' aria-hidden='true'></i> #{post.title}".html_safe, post_path(post) %></li>
+              <% end %>
+            </ul>
+        <% end %>
+      </ul>
+    </li>
+    <li><a href="#about_me" role="button" data-toggle="collapse" data-parent="#blog-nav" aria-expanded="false"
            aria-controls="about_me"><i class="fa fa-user" aria-hidden="true"></i>About Me</a></li>
     <li class="collapse" id="about_me">
       <div class="text-center">
@@ -17,6 +30,7 @@
         </section>
       </div>
     </li>
+    <li><%= link_to "<i class='fa fa-archive' aria-hidden='true'></i> Archives".html_safe, archives_path %></li>
   </ul>
   <ul class="category">
     <li class="text-center"><h4>Social</h4></li>

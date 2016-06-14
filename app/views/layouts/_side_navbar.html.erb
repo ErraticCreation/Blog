@@ -3,7 +3,7 @@
     <li class="text-center"><h4>Website</h4></li>
     <% if controller_name == "posts" %>
       <li><a href="#blog" role="button" data-toggle="collapse" data-parent="#blog-nav" aria-expanded="false"
-             aria-controls="blog"><i class="fa fa-book" aria-hidden="true"></i>Blog Posts</a></li>
+             aria-controls="blog"><i class="fa fa-book" aria-hidden="true"></i>Blog Posts <i class="fa fa-plus" aria-hidden="true"></i></a></li>
       <li class="collapse" id="blog">
         <ul>
           <% @post_months.sort.reverse.each do |month, posts| %>
@@ -18,7 +18,7 @@
       </li>
     <% end %>
     <li><a href="#about_me" role="button" data-toggle="collapse" data-parent="#blog-nav" aria-expanded="false"
-           aria-controls="about_me"><i class="fa fa-user" aria-hidden="true"></i>About Me</a></li>
+           aria-controls="about_me"><i class="fa fa-user" aria-hidden="true"></i>About Me <i class="fa fa-plus" aria-hidden="true"></i></a></li>
     <li class="collapse" id="about_me">
       <div class="text-center">
         <header>
